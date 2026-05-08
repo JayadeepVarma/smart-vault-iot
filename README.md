@@ -73,17 +73,9 @@ smart-vault/
 │   └── ml_anomaly.py       anomaly detection model
 ├── config/
 │   └── config.yaml         central configuration
-├── scripts/
-│   └── generate_data.py    backfill historical records
 ├── arduino/
 │   └── smart_vault/
 │       └── smart_vault.ino Arduino sketch
-├── mosquitto/
-│   └── config/
-│       └── mosquitto.conf  MQTT broker config
-├── .env.example            token template (copy to .env)
-├── .gitignore
-├── requirements.txt
 └── README.md
 ```
 
@@ -109,7 +101,7 @@ cd smart-vault
 
 ```bash
 python -m venv .venv
-.venv\Scripts\activate
+.venv\scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -188,7 +180,7 @@ python src/ml_anomaly.py
 ### 9. Generate historical data (optional)
 
 ```bash
-python scripts/generate_data.py
+python src/generate_data.py
 ```
 
 ---
