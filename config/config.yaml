@@ -1,0 +1,31 @@
+# Smart Vault - Configuration
+
+device:
+  port: "COM3"
+  baud_rate: 9600
+  timeout: 5
+
+mqtt:
+  broker: "localhost"
+  port: 1883
+  topic_data: "smartvault/data"
+  topic_alert: "smartvault/alert"
+  topic_status: "smartvault/status"
+  client_id: "vault-gateway-01"
+
+failure_simulation:
+  enabled: true
+  duplicate_every_n: 47
+  delay_every_n: 31
+  delay_seconds: 3
+  out_of_range_every_n: 23
+
+logging:
+  level: "DEBUG"
+  file: "logs/gateway.log"
+
+influxdb:
+  url: "http://localhost:8086"
+  token: "${INFLUXDB_TOKEN}"
+  org: "rowan-iot"
+  bucket: "smartvault"
