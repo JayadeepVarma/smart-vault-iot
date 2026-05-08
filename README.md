@@ -76,8 +76,6 @@ smart-vault/
 ├── arduino/
 │   └── smart_vault/
 │       └── smart_vault.ino Arduino sketch
-├── .env
-├── .gitignore
 └── README.md
 ```
 
