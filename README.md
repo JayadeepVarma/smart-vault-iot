@@ -101,7 +101,7 @@ cd smart-vault
 
 ```bash
 python -m venv .venv
-.venv\src\activate
+.venv\scripts\activate
 pip install -r requirements.txt
 ```
 
