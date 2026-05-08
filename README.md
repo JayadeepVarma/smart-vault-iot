@@ -73,17 +73,11 @@ smart-vault/
 │   └── ml_anomaly.py       anomaly detection model
 ├── config/
 │   └── config.yaml         central configuration
-├── scripts/
-│   └── generate_data.py    backfill historical records
 ├── arduino/
 │   └── smart_vault/
 │       └── smart_vault.ino Arduino sketch
-├── mosquitto/
-│   └── config/
-│       └── mosquitto.conf  MQTT broker config
-├── .env.example            token template (copy to .env)
+├── .env
 ├── .gitignore
-├── requirements.txt
 └── README.md
 ```
 
