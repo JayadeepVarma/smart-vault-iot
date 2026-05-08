@@ -15,7 +15,7 @@ An IoT pipeline that monitors a secure enclosure for unauthorized entry and phys
         |
      USB Serial (9600 baud)
         |
-[src/gateway.py  -  Edge Gateway]
+[scripts/gateway.py  -  Edge Gateway]
   - Reads JSON from Arduino every second
   - Adds UTC timestamp
   - Validates data (6 rules)
@@ -24,7 +24,7 @@ An IoT pipeline that monitors a secure enclosure for unauthorized entry and phys
         |
       MQTT (eclipse-mosquitto, port 1883)
         |
-[src/subscriber.py  -  MQTT Subscriber]
+[scripts/subscriber.py  -  MQTT Subscriber]
   - Subscribes to all vault topics
   - Validates and deduplicates records
   - Writes to InfluxDB using correct tag/field schema
@@ -36,7 +36,7 @@ An IoT pipeline that monitors a secure enclosure for unauthorized entry and phys
         |
    +--------------------+
    |                    |
-[Grafana]          [src/ml_anomaly.py]
+[Grafana]          [scripts/ml_anomaly.py]
   4 dashboards       Isolation Forest model
   Live light panel   Writes vault_anomalies
   Status pie chart   back to InfluxDB
@@ -67,7 +67,7 @@ Grafana connects directly to InfluxDB and supports Flux queries natively. It pro
 
 ```
 smart-vault/
-├── src/
+├── scripts/
 │   ├── gateway.py          edge gateway - serial to MQTT
 │   ├── subscriber.py       MQTT to InfluxDB writer
 │   └── ml_anomaly.py       anomaly detection model
@@ -166,17 +166,17 @@ Open three terminals:
 
 **Terminal 1:**
 ```bash
-python src/gateway.py
+python scripts/gateway.py
 ```
 
 **Terminal 2:**
 ```bash
-python src/subscriber.py
+python scripts/subscriber.py
 ```
 
 **Terminal 3 (run once after data is collected):**
 ```bash
-python src/ml_anomaly.py
+python scripts/ml_anomaly.py
 ```
 
 ### 9. Generate historical data (optional)
